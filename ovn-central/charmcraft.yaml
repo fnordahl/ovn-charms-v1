@@ -1,7 +1,11 @@
 type: charm
 
 parts:
+  shared-lib:
+    plugin: dump
+    source: ../lib
   charm:
+    after: [shared-lib]
     source: src/
     plugin: reactive
     reactive-charm-build-arguments:
